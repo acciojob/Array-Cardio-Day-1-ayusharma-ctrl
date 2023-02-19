@@ -54,7 +54,7 @@ export function sort() {
 // 4. How many years did all the inventors live?
 // Return the total number of years all the inventors lived
 export function reduce() {
-	const totalYears = live.reduce((accumulator, currentValue) => {
+	const totalYears = inventors.reduce((accumulator, currentValue) => {
 		accumulator + (currentValue.passed-currentValue.year)
 	},0)
 	return totalYears;
@@ -63,7 +63,7 @@ export function reduce() {
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
-	const array = inventors.sort((p,q)=> {
+	const array = inventors.sort((a,b)=> {
 		const lastInventor = a.passed - a.year;
         const nextInventor = b.passed - b.year;
         return lastInventor > nextInventor ? -1 : 1;
@@ -74,7 +74,7 @@ export function sortbylived() {
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-	const array = inventors.sort((p,q)=>{
+	const array = inventors.sort((a,b)=>{
 		if(a.last < b.last){
 			return -1;
 		}
